@@ -13,7 +13,7 @@ const HeaderCartButton = props => {
 
     const numberOfCartItems = items.reduce((curNumber, item) => { return curNumber + item.amount;}, 0);
 
-    
+    // to make bump
     const btnClasses = `${classes.button} ${butIsHilighted ? classes.bump : ''}`;
 
     useEffect(() => {

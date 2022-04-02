@@ -37,7 +37,7 @@ const FoodItemForm = (props) =>{
             defaultValue: '0',
         }}></Input>
         <button>+ Add</button>
-        {!amountIsValid && <p>Please enter a valid amount (1-10)</p>}
+
     </form>
     );
 }
