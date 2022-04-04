@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { Children, useState } from 'react';
 import './App.css';
 import Cart from './components/Cart/Cart';
 
 import Header from './components/Layout/Header';
 import Food from './components/Foods/Foods';
 import CartProvider from './store/CartProvider';
+import AddingComponent from './components/Foods/AddingComponent';
 
 function App() {
 
@@ -17,14 +18,24 @@ function App() {
   const hideCartHandler = () => {
     setCartIsShown(false);
   }
+  const [cartIsShownAdd, setCartIsShownAdd] = useState(false);
+
+  const showCartHandlerAdd = () => {
+    setCartIsShownAdd(true);
+  }
+
+  const hideCartHandlerAdd = () => {
+    setCartIsShownAdd(false);
+  }
 
   return (
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler}></Cart>}
       <Header onShowCart={showCartHandler} ></Header>
       <main>
-        <Food></Food>
+        <Food onShowCart={showCartHandlerAdd}></Food>
       </main>
+      {cartIsShownAdd && <AddingComponent onClose={hideCartHandlerAdd} ></AddingComponent>}
     </CartProvider>
   );
 }

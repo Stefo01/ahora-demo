@@ -9,6 +9,7 @@ const FoodItemForm = (props) =>{
 
     const sumbitHandler = event => {
         event.preventDefault();
+        //props.onShowCart(); // apre il pop up per la quantità
         
         const enteredAmount = amountInputRef.current.value;
         const enteredAmountNumber = +enteredAmount;
@@ -34,10 +35,9 @@ const FoodItemForm = (props) =>{
             min: '0',
             max: '9',
             step: '1',
-            defaultValue: '0',
+            defaultValue: '1',
         }}></Input>
         <button>+ Add</button>
-
     </form>
     );
 }

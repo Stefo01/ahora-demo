@@ -1,27 +1,41 @@
+.textInside {
+  font-size: 2rem;
+  margin: auto;
+  margin-bottom: 1.5rem;
+}
+
+.header {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+.imageFood {
+  width: 100px;
+  border-radius: 5%;
+}
+
   .quantifyButton {
     font: inherit;
     background-color: #8a2b06;
     padding: 0.5rem 2rem;
-    border-radius: 50%;
-    margin-left: 1rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
   .total {
-    display: flex;
-    justify-content: space-between;
+    display:flex;
+    justify-content:center;
     align-items: center;
     font-weight: bold;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    
   }
   
   .actions {
-    text-align: right;
+    text-align: center;
+    justify-content: center;
+    margin-top: 3%;
   }
   
   .actions button {
     font: inherit;
-    cursor: pointer;
     background-color: transparent;
     border: 1px solid #8a2b06;
     padding: 0.5rem 2rem;
@@ -44,3 +58,5 @@
     background-color: #8a2b06;
     color: white;
   }
+
+  

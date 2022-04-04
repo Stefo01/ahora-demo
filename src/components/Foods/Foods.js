@@ -3,7 +3,7 @@ import AvailableFoods from "./AvailableMeals";
 import FoodSummary from "./FoodSummary";
 
 
-const Food = () => {
+const Food = (props) => {
     const kindOfFood = [{
         name: 'Birre',
         id: 'M1',
@@ -26,7 +26,7 @@ const Food = () => {
 
     return <Fragment>
         <FoodSummary kindOfFood={kindOfFood}></FoodSummary>
-        <AvailableFoods></AvailableFoods>
+        <AvailableFoods onShowCart={props.onShowCart}></AvailableFoods>
     </Fragment>
 }
 

@@ -1,9 +1,19 @@
 .meal {
     display: flex;
     justify-content: space-between;
-    margin: 1rem;
-    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     border-bottom: 1px solid #ccc;
+  }
+
+  .meal2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-bottom: 2px solid rgb(39, 16, 16);
   }
   
   .meal h3 {
@@ -19,4 +29,119 @@
     font-weight: bold;
     color: #ad5502;
     font-size: 1.25rem;
+  }
+  .B1 {
+    background-color: rgb(255, 255, 255);
+    border: #ccc;
+    font-style: italic;
+    font-size: 1rem;
+    width:auto;
+    height:30px;
+    margin-left: 85%;
+    margin-bottom: 1%;
+  }
+  .B1 em{
+    vertical-align:middle;
+    margin:0 2px;
+    display:inline-block;
+    width:16px;
+    height:16px;
+    background-image: url(outline_arrow_drop_down_black_24dp.png);      
+}
+.B2 {
+  background-color: rgb(255, 255, 255);
+  border: #ccc;
+  font-style: italic;
+  font-size: 1rem;
+  width:auto;
+  height:30px;
+  margin-left: 85%;
+  margin-bottom: 1%;
+}
+.B2 em{
+  vertical-align:middle;
+  margin:0 2px;
+  display:inline-block;
+  width:16px;
+  height:16px;
+  background-image: url(outline_arrow_drop_up_black_24dp.png);      
+}
+
+  .imageFood {
+    width: 100px;
+    border-radius: 5%;
+  }
+
+  .quantifyButton {
+    font: inherit;
+    background-color: #8a2b06;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .total {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  .actions {
+    text-align: center;
+    justify-content: center;
+    margin-top: 3%;
+  }
+  
+  .actions button {
+    font: inherit;
+    background-color: transparent;
+    border: 1px solid #8a2b06;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+  }
+  
+  .actions button:hover,
+  .actions button:active {
+    background-color: #5a1a01;
+    border-color: #5a1a01;
+    color: white;
+  }
+  
+  .actions .button--alt {
+    color: #8a2b06;
+  }
+  
+  .actions .button {
+    background-color: #8a2b06;
+    color: white;
+  }
+
+  .textInside {
+    font-size: 2rem;
+    margin: auto;
+    margin: 1.5rem;
+  }
+
+  .form {
+    text-align: right;
+  }
+  
+  .form button {
+    font: inherit;
+    cursor: pointer;
+    background-color: #8a2b06;
+    border: 1px solid #8a2b06;
+    color: white;
+    padding: 0.25rem 2rem;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .form button:hover,
+  .form button:active {
+    background-color: #641e03;
+    border-color: #641e03;
   }
