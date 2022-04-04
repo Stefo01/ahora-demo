@@ -17,6 +17,10 @@
     margin-top: 0;
   }
 
+  .menuItemsClicked{
+    font-weight: bold;
+  }
+
   .menuItems {
     text-align: center;
     font-size: medium;
@@ -31,6 +35,15 @@
     font-size: 1rem;
   }
 
-  .menuItemsClicked{
-    font-weight: bold;
+
+  .search {
+    position: absolute;
+    top: 155px;
+    left: 20px;
+    right: 20px;
   }
+  .search fix-search{
+      position: fixed;
+      top: 10px;
+      width: 250px;
+    }

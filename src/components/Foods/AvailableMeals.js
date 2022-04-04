@@ -27,6 +27,12 @@ const DUMMY_MEALS = [
       description: 'Tocco di classe',
       price: 18.99,
     },
+    {
+      id: 'm5',
+      name: 'Non so',
+      description: 'Nessun allergene',
+      price: 8.99,
+    },
   ];
 
 const AvailableFoods = (props) => {
