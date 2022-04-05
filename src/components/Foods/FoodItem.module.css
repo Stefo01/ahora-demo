@@ -8,6 +8,7 @@
 
   .meal2 {
     border-bottom: 1px solid #ccc;
+    margin-bottom: 10%;
   }
   
   .meal h3 {
@@ -121,6 +122,7 @@
 
   .form {
     text-align: right;
+    margin-bottom:8%;
   }
   
   .form button {

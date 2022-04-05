@@ -60,9 +60,9 @@ const FoodItem = props => {
                     <div className={classes.description}>{props.description}</div>
                     <div className={classes.price}>{price}</div>
                 </div>
-                <div className={classes.form}>
+                {disappear && <div className={classes.form}>
                     <button onClick={AddItemNow}>+ Add</button>
-                </div>
+                </div>}
             </div>
             {appear && <div>
                 <button className={classes.B2} onClick={DescriptionAppear}><em></em></button>
@@ -80,6 +80,9 @@ const FoodItem = props => {
                     <button className={classes.quantifyButton} onClick={removeNumberItem}>-</button>
                     <span className={classes.textInside}>{number}</span>
                     <button className={classes.quantifyButton} onClick={addNumberItem}>+</button>
+                    <div className={classes.form}>
+                        <button onClick={AddItemNow}>+ Add</button>
+                    </div>
                 </div>
         </div>}
     </div>
