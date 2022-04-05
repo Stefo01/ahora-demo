@@ -52,24 +52,26 @@ const FoodItem = props => {
     }
 
     return (
-    <div>
-        <div className={classes.meal}>
-            <div>
-                <h3>{props.name}</h3>
-                <div className={classes.description}>{props.description}</div>
-                <div className={classes.price}>{price}</div>
+    <div className={classes.meal2}>
+        <div>
+            <div className={classes.meal}>
+                <div>
+                    <h3>{props.name}</h3>
+                    <div className={classes.description}>{props.description}</div>
+                    <div className={classes.price}>{price}</div>
+                </div>
+                <div className={classes.form}>
+                    <button onClick={AddItemNow}>+ Add</button>
+                </div>
             </div>
-            <div className={classes.form}>
-                <button onClick={AddItemNow}>+ Add</button>
-            </div>
+            {appear && <div>
+                <button className={classes.B2} onClick={DescriptionAppear}><em></em></button>
+            </div>}
+            {disappear && <div>
+                <button className={classes.B1} onClick={DescriptionAppear}><em></em></button>
+            </div>}
         </div>
-        {appear && <div>
-            <button className={classes.B2} onClick={DescriptionAppear}><em></em></button>
-        </div>}
-        {disappear && <div>
-            <button className={classes.B1} onClick={DescriptionAppear}><em></em></button>
-        </div>}
-        {appear && <div className={classes.meal2}>
+        {appear && <div className={classes.meal}>
                 <div>
                     <img className={classes.imageFood} src="https://www.scattidigusto.it/wp-content/uploads/2014/02/pizza-margherita-Sorbillo-960x960.jpg"></img>
                 </div>
