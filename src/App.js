@@ -1,4 +1,4 @@
-import { Children, useState } from 'react';
+import { Children, useEffect, useState } from 'react';
 import './App.css';
 import Cart from './components/Cart/Cart';
 
@@ -6,6 +6,9 @@ import Header from './components/Layout/Header';
 import Food from './components/Foods/Foods';
 import CartProvider from './store/CartProvider';
 import AddingComponent from './components/Foods/AddingComponent';
+import BusinessProvider from './store/BusinessProvider';
+
+
 
 function App() {
 
@@ -29,14 +32,16 @@ function App() {
   }
 
   return (
-    <CartProvider>
-      {cartIsShown && <Cart onClose={hideCartHandler}></Cart>}
-      <Header onShowCart={showCartHandler} ></Header>
-      <main>
-        <Food onShowCart={showCartHandlerAdd}></Food>
-      </main>
-      {cartIsShownAdd && <AddingComponent onClose={hideCartHandlerAdd} ></AddingComponent>}
-    </CartProvider>
+    <BusinessProvider>
+      <CartProvider>
+        {cartIsShown && <Cart onClose={hideCartHandler}></Cart>}
+        <Header onShowCart={showCartHandler} ></Header>
+        <main>
+          <Food onShowCart={showCartHandlerAdd}></Food>
+        </main>
+        {cartIsShownAdd && <AddingComponent onClose={hideCartHandlerAdd} ></AddingComponent>}
+      </CartProvider>
+    </BusinessProvider>
   );
 }
 
