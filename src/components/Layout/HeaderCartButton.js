@@ -8,16 +8,16 @@ import CartContext from "../../store/cart-contex"
 const HeaderCartButton = props => {
 
     const [butIsHilighted, setButtonHighlight] = useState(false);
-    const  cartCtx = useContext(CartContext);
-    const {items} = cartCtx;
+    const cartCtx = useContext(CartContext);
+    const { items } = cartCtx;
 
-    const numberOfCartItems = items.reduce((curNumber, item) => { return curNumber + item.amount;}, 0);
+    const numberOfCartItems = items.reduce((curNumber, item) => { return curNumber + item.quantity; }, 0);
 
     // to make bump
     const btnClasses = `${classes.button} ${butIsHilighted ? classes.bump : ''}`;
 
     useEffect(() => {
-        if(cartCtx.items.length === 0){
+        if (cartCtx.items.length === 0) {
             return;
         }
         setButtonHighlight(true);
@@ -29,9 +29,9 @@ const HeaderCartButton = props => {
             clearTimeout(timer);
         }
     }, [items]);
-    return(
+    return (
         <button className={btnClasses} onClick={props.onClick1}>
-            
+
             <span>Ordina ora</span>
             <span className={classes.badge}>
                 {numberOfCartItems}

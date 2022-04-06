@@ -4,6 +4,9 @@ import { useContext } from 'react';
 import CartContext from '../../store/cart-contex';
 import CartItem from './CartItem';
 import BusinessContext from '../../store/business-context';
+import { db } from './../../firebaseConfig';
+import { collection, addDoc, Timestamp, serverTimestamp } from 'firebase/firestore';
+
 
 const Cart = props => {
     const cartCtx = useContext(CartContext);
@@ -16,15 +19,21 @@ const Cart = props => {
         cartCtx.removeItem(id)
     };
     const cartItemAddHandler = item => {
-        cartCtx.addItem({ ...item, amount: 1 })
+        cartCtx.addItem({ ...item, quantity: 1 })
     };
 
-    const onConfirm = () => {
-        console.log(cartCtx.items)
-
+    const onConfirm = async () => {
+        // console.log(cartCtx.items)
+        const orderRef = collection(db, "businesses", businessCtx.id, "orders")
+        await addDoc(orderRef, {
+            items: cartCtx.items,
+            table: businessCtx.table,
+            completed: false,
+            time: serverTimestamp()
+        })
     }
 
-    const cartItems = <ul className={classes['cart-items']}>{cartCtx.items.map(item => (<CartItem key={item.id} name={item.name} amount={item.amount} price={item.price} onRemove={cartItemRemoveHandler.bind(null, item.id)}
+    const cartItems = <ul className={classes['cart-items']}>{cartCtx.items.map(item => (<CartItem key={item.id} name={item.name} quantity={item.quantity} price={item.price} onRemove={cartItemRemoveHandler.bind(null, item.id)}
         onAdd={cartItemAddHandler.bind(null, item)}></CartItem>))}</ul>;
 
     return (
