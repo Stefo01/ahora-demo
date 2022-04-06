@@ -1,6 +1,6 @@
 import classes from './FoodItem.module.css'
 import FoodItemForm from './FoodItemForms';
-import { useContext, useState , useRef} from 'react';
+import { useContext, useState, useRef } from 'react';
 import CartContext from '../../store/cart-contex';
 
 const FoodItem = props => {
@@ -11,41 +11,41 @@ const FoodItem = props => {
     const [number, setNumber] = useState(0);
 
 
-    const removeNumberItem = () =>{
+    const removeNumberItem = () => {
         const num = number;
-        if(num === 0)
+        if (num === 0)
             return;
-        setNumber(num -1);
+        setNumber(num - 1);
     }
     const addNumberItem = () => {
         const num = number;
-        if(num >= 9)
+        if (num >= 9)
             return;
-        setNumber(num +1);
+        setNumber(num + 1);
     }
 
-    const AddToCartHandler = (amount) => {
+    const AddToCartHandler = (quantity) => {
         cartCtx.addItem({
             id: props.id,
             name: props.name,
-            amount: amount,
+            quantity: quantity,
             price: props.price
         });
     }
 
     const DescriptionAppear = () => {
-        if(appear === true){
+        if (appear === true) {
             setDisappear(true)
             setAppear(false)
         }
-        else{
+        else {
             setAppear(true)
             setDisappear(false)
         }
     }
     const AddItemNow = () => {
         const num = number;
-        if(num >0 && num<=9)
+        if (num > 0 && num <= 9)
             AddToCartHandler(num);
         setNumber(0);
         DescriptionAppear();
@@ -64,14 +64,7 @@ const FoodItem = props => {
                     <button onClick={AddItemNow}>+ Add</button>
                 </div>}
             </div>
-            {appear && <div>
-                <button className={classes.B2} onClick={DescriptionAppear}><em></em></button>
-            </div>}
-            {disappear && <div>
-                <button className={classes.B1} onClick={DescriptionAppear}><em></em></button>
-            </div>}
-        </div>
-        {appear && <div className={classes.meal}>
+            {appear && <div className={classes.meal}>
                 <div>
                     <img className={classes.imageFood} src="https://www.scattidigusto.it/wp-content/uploads/2014/02/pizza-margherita-Sorbillo-960x960.jpg"></img>
                 </div>
@@ -84,7 +77,8 @@ const FoodItem = props => {
                         <button onClick={AddItemNow}>+ Add</button>
                     </div>
                 </div>
-        </div>}
+            </div>}
+        </div>
     </div>
     );
 };

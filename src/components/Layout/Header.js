@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import BusinessContext from "../../store/business-context";
 
 import HeaderCartButton from "./HeaderCartButton";
 import './Header.css';
 
 
 const Header = props => {
+    const businessCtx = useContext(BusinessContext);
+
     return (
         <React.Fragment>
             <header className="header-Header">
-                <h2>Tavolo 52</h2>
+                <h2>Tavolo {businessCtx.table}</h2>
                 <HeaderCartButton onClick1={props.onShowCart}></HeaderCartButton>
             </header>
             <div className='main-image-header'>
