@@ -6,6 +6,7 @@ import CartItem from './CartItem';
 import BusinessContext from '../../store/business-context';
 import { db } from './../../firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { Oval } from "react-loader-spinner";
 
 
 const Cart = props => {
@@ -37,21 +38,45 @@ const Cart = props => {
         cartCtx.clearCart()
         setLoading(false)
         setShowSuccessModal(true)
+
+    }
+
+    const onSuccessClose = () => {
+        setShowSuccessModal(false)
+        props.onClose()
     }
 
     const cartItems = <ul className={classes['cart-items']}>{cartCtx.items.map(item => (<CartItem key={item.id} name={item.name} quantity={item.quantity} price={item.price} onRemove={cartItemRemoveHandler.bind(null, item.id)}
         onAdd={cartItemAddHandler.bind(null, item)}></CartItem>))}</ul>;
 
+    if (loading) {
+        // show loading animation
+        return (<Modal>
+            <Oval className={classes.total} color="#DE5050" secondaryColor='#c15e5e' height={60} width={60} />
+        </Modal>)
+    }
+    if (showSuccessModal) {
+        // show success modal
+        return (<Modal key="successModal" onClose={onSuccessClose}>
+            <div>
+                <h1 style={{ textAlign: 'center' }}>Il tuo ordine è stato inviato</h1>
+            </div>
+            <div className={classes.actions}>
+                <button className={classes['button--alt']} onClick={onSuccessClose}>Ok</button>
+            </div>
+        </Modal>)
+    }
+
     return (
-        <Modal onClose={props.onClose}>
+        <Modal key="cartModal" onClose={props.onClose}>
             {cartItems}
             <div className={classes.total}>
-                <span>Total Amount</span>
+                <span>Totale</span>
                 <span>{totalAmount}</span>
             </div>
             <div className={classes.actions}>
-                <button className={classes['button--alt']} onClick={props.onClose}>Close</button>
-                {hasItems && <button className={classes.button} onClick={onConfirm} disabled={loading}>Confirm</button>}
+                <button className={classes['button--alt']} onClick={props.onClose}>Chiudi</button>
+                {hasItems && <button className={classes.button} onClick={onConfirm} disabled={loading}>Conferma</button>}
             </div>
         </Modal>
     )

@@ -7,6 +7,7 @@ import Food from './components/Foods/Foods';
 import CartProvider from './store/CartProvider';
 import AddingComponent from './components/Foods/AddingComponent';
 import BusinessProvider from './store/BusinessProvider';
+import CategoryProvider from './store/CategoryProvider';
 
 
 
@@ -33,14 +34,16 @@ function App() {
 
   return (
     <BusinessProvider>
-      <CartProvider>
-        {cartIsShown && <Cart onClose={hideCartHandler}></Cart>}
-        <Header onShowCart={showCartHandler} ></Header>
-        <main>
-          <Food onShowCart={showCartHandlerAdd}></Food>
-        </main>
-        {cartIsShownAdd && <AddingComponent onClose={hideCartHandlerAdd} ></AddingComponent>}
-      </CartProvider>
+      <CategoryProvider>
+        <CartProvider>
+          {cartIsShown && <Cart onClose={hideCartHandler}></Cart>}
+          <Header onShowCart={showCartHandler} ></Header>
+          <main>
+            <Food onShowCart={showCartHandlerAdd}></Food>
+          </main>
+          {cartIsShownAdd && <AddingComponent onClose={hideCartHandlerAdd} ></AddingComponent>}
+        </CartProvider>
+      </CategoryProvider>
     </BusinessProvider>
   );
 }

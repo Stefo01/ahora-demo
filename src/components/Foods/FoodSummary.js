@@ -1,14 +1,12 @@
 import { Fragment, useContext } from 'react';
 import classes from './FoodSummary.module.css'
 import BusinessContext from '../../store/business-context';
+import CategoryContext from '../../store/category-context';
 
 
 const FoodSummary = (props) => {
     const businessCtx = useContext(BusinessContext);
-
-    const displayItems = (id) => {
-
-    }
+    const categoryCtx = useContext(CategoryContext);
 
     return (
         <Fragment>
@@ -19,7 +17,7 @@ const FoodSummary = (props) => {
                 </p>
             </section>
             <div className={classes.menuItems}>
-                {businessCtx.categories.map(category => <h2 key={category.id} onClick={() => displayItems(category.id)}>{category.name}</h2>)}
+                {businessCtx.categories.map(category => <h2 key={category.id} className={classes.menuItemsClicked} onClick={() => categoryCtx.selectCategory(category.id)}>{category.name}</h2>)}
             </div>
         </Fragment>
     )
