@@ -1,4 +1,5 @@
 import classes from './CartItem.module.css';
+import MaterialIcon, { colorPalette } from 'material-icons-react';
 
 const CartItem = (props) => {
   const price = `$${props.price.toFixed(2)}`;

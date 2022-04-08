@@ -2,12 +2,10 @@ import classes from './AvaliableMeals.module.css'
 import Card from '../UI/Card';
 import FoodItem from './FoodItem';
 import { useContext } from 'react';
-import BusinessContext from '../../store/business-context';
 import CategoryContext from '../../store/category-context';
 
 
 const AvailableFoods = (props) => {
-  const businessCtx = useContext(BusinessContext);
   const categoryCtx = useContext(CategoryContext);
 
 
