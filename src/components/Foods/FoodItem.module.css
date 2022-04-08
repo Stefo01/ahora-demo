@@ -73,8 +73,8 @@
   font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
-  color: #8a2b06;
-  border: 1px solid #8a2b06;
+  color: #04353d;
+  border: 1px solid #04353d;
   min-width: 2.5rem;
   text-align: center;
   border-radius: 10px;
@@ -101,8 +101,8 @@
   font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
-  color: #8a2b06;
-  border: 1px solid #8a2b06;
+  color: #04353d;
+  border: 1px solid #04353d;
   width: 3rem;
   text-align: center;
   border-radius: 6px;
@@ -120,11 +120,11 @@
 }
 
 .actions .button--alt {
-  color: #8a2b06;
+  color: #04353d;
 }
 
 .actions .button {
-  background-color: #8a2b06;
+  background-color: #04353d;
   color: white;
 }
 
@@ -144,8 +144,8 @@
 .form button {
   font: inherit;
   cursor: pointer;
-  background-color: #8a2b06;
-  border: 1px solid #8a2b06;
+  background-color: #04353d;
+  border: 1px solid #04353d;
   color: white;
   padding: 0.3rem 2rem;
   border-radius: 20px;

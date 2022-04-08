@@ -8,55 +8,55 @@
   font-family: Arial, sans-serif;
   font-weight: bold;
 }
+
 .imageFood {
   width: 100px;
   border-radius: 5%;
 }
 
-  .quantifyButton {
-    font: inherit;
-    background-color: #8a2b06;
-    padding: 0.5rem 2rem;
-    border-radius: 20px;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-  .total {
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    font-weight: bold;
-  }
-  
-  .actions {
-    text-align: center;
-    justify-content: center;
-    margin-top: 3%;
-  }
-  
-  .actions button {
-    font: inherit;
-    background-color: transparent;
-    border: 1px solid #8a2b06;
-    padding: 0.5rem 2rem;
-    border-radius: 25px;
-    margin-left: 1rem;
-  }
-  
-  .actions button:hover,
-  .actions button:active {
-    background-color: #5a1a01;
-    border-color: #5a1a01;
-    color: white;
-  }
-  
-  .actions .button--alt {
-    color: #8a2b06;
-  }
-  
-  .actions .button {
-    background-color: #8a2b06;
-    color: white;
-  }
+.quantifyButton {
+  font: inherit;
+  background-color: #04353d;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
 
-  
+.total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.actions {
+  text-align: center;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.actions button {
+  font: inherit;
+  background-color: transparent;
+  border: 1px solid #04353d;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #5a1a01;
+  border-color: #5a1a01;
+  color: white;
+}
+
+.actions .button--alt {
+  color: #04353d;
+}
+
+.actions .button {
+  background-color: #04353d;
+  color: white;
+}
