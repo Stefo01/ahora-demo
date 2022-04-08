@@ -52,8 +52,10 @@ const FoodItem = props => {
                     </div>
 
                     <div className={classes.form}>
-                        {!appear && <MaterialIcon icon="expand_more" />}
-                        {appear && <MaterialIcon icon="expand_less" />}
+                        <span className="material-icons" style={{ color: 'gray' }}>
+                            {appear ? "expand_less" : "expand_more"}
+                        </span>
+
                     </div>
                 </div>
                 {appear && <div className={classes.meal}>
