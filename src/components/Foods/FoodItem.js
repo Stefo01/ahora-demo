@@ -1,7 +1,6 @@
 import classes from './FoodItem.module.css'
 import { useContext, useState } from 'react';
 import CartContext from '../../store/cart-contex';
-import MaterialIcon from 'material-icons-react';
 
 
 const FoodItem = props => {
