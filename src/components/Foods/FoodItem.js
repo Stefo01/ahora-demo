@@ -1,13 +1,26 @@
 import classes from './FoodItem.module.css'
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CartContext from '../../store/cart-contex';
+import BusinessContext from '../../store/business-context';
+import { getDownloadURL, ref } from "firebase/storage";
+import { storage } from "./../../firebaseConfig";
+
 
 
 const FoodItem = props => {
     const cartCtx = useContext(CartContext);
+    const businessCtx = useContext(BusinessContext);
     const price = `€${props.price.toFixed(2)}`;
     const [appear, setAppear] = useState(false);
     const [number, setNumber] = useState(1);
+    const [image, setImage] = useState(null);
+
+    useEffect(() => {
+        const pathReference = ref(storage, `${businessCtx.id}/menu/${props.id}.jpg`);
+        getDownloadURL(pathReference).then(url => {
+            setImage(url);
+        })
+    }, [])
 
 
     const removeNumberItem = () => {
@@ -59,7 +72,7 @@ const FoodItem = props => {
                 </div>
                 {appear && <div className={classes.meal}>
                     <div>
-                        <img className={classes.imageFood} src="https://www.scattidigusto.it/wp-content/uploads/2014/02/pizza-margherita-Sorbillo-960x960.jpg"></img>
+                        <img className={classes.imageFood} src={image}></img>
                     </div>
                     <div>
                         <button className={classes.quantifyButton} onClick={removeNumberItem}>-</button>
