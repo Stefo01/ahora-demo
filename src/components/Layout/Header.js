@@ -1,5 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import BusinessContext from "../../store/business-context";
+import { storage } from "./../../firebaseConfig";
+import { ref, getDownloadURL } from "firebase/storage";
 
 import HeaderCartButton from "./HeaderCartButton";
 import './Header.css';
@@ -7,6 +9,15 @@ import './Header.css';
 
 const Header = props => {
     const businessCtx = useContext(BusinessContext);
+    const [image, setImage] = useState(null);
+
+    useEffect(() => {
+        const pathReference = ref(storage, `${businessCtx.id}/cover.jpg`);
+        getDownloadURL(pathReference).then(url => {
+            setImage(url);
+        })
+    }, [businessCtx])
+
 
     return (
         <React.Fragment>
@@ -15,7 +26,7 @@ const Header = props => {
                 <HeaderCartButton onClick1={props.onShowCart}></HeaderCartButton>
             </header>
             <div className='main-image-header'>
-                <img className='main-image-Header_img' src="https://raw.githubusercontent.com/academind/react-complete-guide-code/11-practice-food-order-app/extra-files/meals.jpg" alt='A table of delicius food!'></img>
+                <img className='main-image-Header_img' src={image} alt='cover'></img>
             </div>
         </React.Fragment>
     )
