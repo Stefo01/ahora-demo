@@ -7,6 +7,7 @@ import BusinessContext from '../../store/business-context';
 import { db } from './../../firebaseConfig';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { Oval } from "react-loader-spinner";
+import done from './done_black_48dp.svg'
 
 
 const Cart = props => {
@@ -58,9 +59,11 @@ const Cart = props => {
     if (showSuccessModal) {
         // show success modal
         return (<Modal key="successModal" onClose={onSuccessClose}>
-            <div>
-                <h1 style={{ textAlign: 'center' }}>Il tuo ordine è stato inviato</h1>
+            <div className={classes['success-modal']}>
+                <img src={done} className={classes['filter-green']} style={{ width: 100 }} alt="success" />
+                <h1>Abbiamo ricevuto il tuo ordine</h1>
             </div>
+
             <div className={classes.actions}>
                 <button className={classes['button--alt']} onClick={onSuccessClose}>Ok</button>
             </div>

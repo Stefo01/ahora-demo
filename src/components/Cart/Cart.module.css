@@ -51,3 +51,15 @@
   background-color: #04353d;
   color: white;
 }
+
+.success-modal {
+  text-align: center;
+}
+
+.success-modal h1 {
+  font-size: 2rem;
+}
+
+.filter-green {
+  filter: invert(45%) sepia(10%) saturate(2495%) hue-rotate(142deg) brightness(87%) contrast(83%);
+}
