@@ -53,7 +53,9 @@ const Cart = props => {
     if (loading) {
         // show loading animation
         return (<Modal>
-            <Oval className={classes.total} color="#012329" secondaryColor='#04353d' height={60} width={60} />
+            <div className={classes.loading}>
+                <Oval color="#012329" secondaryColor='#04353d' height={60} width={60} />
+            </div>
         </Modal>)
     }
     if (showSuccessModal) {

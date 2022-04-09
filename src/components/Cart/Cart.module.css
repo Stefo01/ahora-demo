@@ -54,6 +54,11 @@
 
 .success-modal {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
 }
 
 .success-modal h1 {
@@ -62,4 +67,11 @@
 
 .filter-green {
   filter: invert(45%) sepia(10%) saturate(2495%) hue-rotate(142deg) brightness(87%) contrast(83%);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh
 }
