@@ -18,28 +18,31 @@
 }
 
 .menuItems {
-  text-align: center;
-  font-size: medium;
-  box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
-  max-width: 45rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 18px 1px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  margin: auto;
-  margin-top: 20px;
+  margin: 20px 6px;
   padding: 0.5rem;
-  display: flex;
-  justify-content: space-evenly;
   font-size: 1rem;
+  overflow: auto;
+  white-space: nowrap;
+  background-color: white;
 }
 
-.menuItems h2 {
+.menuItems h3 {
   cursor: pointer;
   color: #383838;
+  display: inline-block;
+  text-align: center;
+  margin: 14px;
+  font-weight: 500;
 }
 
 .menuItemsClicked {
-  cursor: pointer;
-  font-weight: bold;
-  color: black;
+  color: black !important;
+  font-weight: 700 !important;
 }
 
 .search {

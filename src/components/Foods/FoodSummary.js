@@ -17,7 +17,7 @@ const FoodSummary = (props) => {
                 </p>
             </section>
             <div className={classes.menuItems}>
-                {businessCtx.categories.map(category => <h2 key={category.id} className={classes.menuItemsClicked} onClick={() => categoryCtx.selectCategory(category.id)}>{category.name}</h2>)}
+                {businessCtx.categories.map(category => <h3 key={category.id} className={categoryCtx.isSelected(category.id) ? classes.menuItemsClicked : ""} onClick={() => categoryCtx.selectCategory(category.id)}>{category.name}</h3>)}
             </div>
         </Fragment>
     )
