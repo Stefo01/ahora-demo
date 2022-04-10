@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #04353d;
+  border-bottom: 2px solid #085a69;
   margin: 1rem 0;
   padding-bottom: 1rem;
 }
@@ -46,8 +46,8 @@
   font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
-  color: #04353d;
-  border: 1px solid #04353d;
+  color: #085a69;
+  border: 1px solid #085a69;
   width: 3rem;
   text-align: center;
   border-radius: 6px;
@@ -58,6 +58,6 @@
 
 .cart-item button:hover,
 .cart-item button:active {
-  background-color: #04353d;
+  background-color: #085a69;
   color: white;
 }

@@ -13,7 +13,7 @@ const FoodSummary = (props) => {
             <section className={classes.summary}>
                 <h2>{businessCtx.name}</h2>
                 <p>
-                    Scegli ciò che vuoi ordinare e una volta finito clicca il tasto Ordina ora per riceverlo comodamente al tuo tavolo!
+                    Dai una occhiata al menù, scegli i tuoi piatti e cliccando il tasto "Ordina ora" potrai riceverli al più presto!
                 </p>
             </section>
             <div className={classes.menuItems}>

@@ -63,9 +63,9 @@ const Cart = props => {
         return (<Modal key="successModal" onClose={onSuccessClose}>
             <div className={classes['success-modal']}>
                 <img src={done} className={classes['filter-green']} style={{ width: 100 }} alt="success" />
-                <h1>Abbiamo ricevuto il tuo ordine</h1>
+                <h1>Abbiamo ricevuto il tuo ordine!</h1>
             </div>
-
+            <h4>Grazie per aver usato il servizio Ahora!</h4>
             <div className={classes.actions}>
                 <button className={classes['button--alt']} onClick={onSuccessClose}>Ok</button>
             </div>
