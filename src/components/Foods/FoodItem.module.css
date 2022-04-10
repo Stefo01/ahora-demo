@@ -35,8 +35,8 @@
   font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
-  color: #04353d;
-  border: 1px solid #04353d;
+  color: #085a69;
+  border: 1px solid #085a69;
   min-width: 2.5rem;
   text-align: center;
   border-radius: 10px;
@@ -63,8 +63,8 @@
   font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
-  color: #04353d;
-  border: 1px solid #04353d;
+  color: #085a69;
+  border: 1px solid #085a69;
   width: 3rem;
   text-align: center;
   border-radius: 6px;
@@ -76,24 +76,24 @@
 
 .actions button:hover,
 .actions button:active {
-  background-color: #5a1a01;
-  border-color: #5a1a01;
+  background-color: #04353d;
+  border-color: #04353d;
   color: white;
 }
 
 .actions .button--alt {
-  color: #04353d;
+  color: #085a69;
 }
 
 .actions .button {
-  background-color: #04353d;
+  background-color: #085a69;
   color: white;
 }
 
 .textInside {
   font-size: 1.8rem;
   margin: auto;
-  margin: 1rem;
+  margin: 0.8rem;
   font-weight: 500;
   color: #383838;
 }
@@ -106,8 +106,8 @@
 .form button {
   font: inherit;
   cursor: pointer;
-  background-color: #04353d;
-  border: 1px solid #04353d;
+  background-color: #085a69;
+  border: 1px solid #085a69;
   color: white;
   padding: 0.3rem 2rem;
   border-radius: 20px;
@@ -117,6 +117,6 @@
 
 .form button:hover,
 .form button:active {
-  background-color: #641e03;
-  border-color: #641e03;
+  background-color: #04353d;
+  border-color: #04353d;
 }
