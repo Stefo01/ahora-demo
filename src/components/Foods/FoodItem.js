@@ -62,7 +62,6 @@ const FoodItem = props => {
                         <div className={classes.description}>{props.description}</div>
                         <div className={classes.price}>{price}</div>
                     </div>
-
                     <div className={classes.form}>
                         <span className="material-icons" style={{ color: 'gray' }}>
                             {appear ? "expand_less" : "expand_more"}
