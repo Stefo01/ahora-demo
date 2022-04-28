@@ -34,7 +34,9 @@ const Cart = props => {
             items: cartCtx.items,
             table: businessCtx.table,
             completed: false,
-            time: serverTimestamp()
+            archived: false,
+            time: serverTimestamp(),
+            total: cartCtx.totalAmount
         })
         cartCtx.clearCart()
         setLoading(false)
