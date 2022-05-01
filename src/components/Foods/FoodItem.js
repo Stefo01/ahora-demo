@@ -20,7 +20,7 @@ const FoodItem = props => {
         getDownloadURL(pathReference).then(url => {
             setImage(url);
         })
-    }, [])
+    }, [businessCtx.id])
 
 
     const removeNumberItem = () => {
@@ -71,7 +71,7 @@ const FoodItem = props => {
                 </div>
                 {appear && <div className={classes.meal}>
                     <div>
-                        <img className={classes.imageFood} src={image}></img>
+                        <img className={classes.imageFood} src={image} alt=""></img>
                     </div>
                     <div>
                         <button className={classes.quantifyButton} onClick={removeNumberItem}>-</button>

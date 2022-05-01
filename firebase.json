@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "smart-menu-demo",
+    "site": "ahora-milano-app",
     "public": "build",
     "ignore": [
       "firebase.json",

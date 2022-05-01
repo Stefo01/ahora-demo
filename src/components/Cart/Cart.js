@@ -15,7 +15,7 @@ const Cart = props => {
     const businessCtx = useContext(BusinessContext);
     const [loading, setLoading] = useState(false);
     const [showSuccessModal, setShowSuccessModal] = useState(false);
-
+    const [orderNumber, setOrderNumber] = useState(null);
     const totalAmount = `€${cartCtx.totalAmount.toFixed(2)}`;
     const hasItems = cartCtx.items.length > 0;
 
@@ -29,6 +29,8 @@ const Cart = props => {
     const onConfirm = async () => {
         // console.log(cartCtx.items)
         setLoading(true)
+        const number = makeid(6);
+        setOrderNumber(number)
         const orderRef = collection(db, "businesses", businessCtx.id, "orders")
         await addDoc(orderRef, {
             items: cartCtx.items,
@@ -36,7 +38,8 @@ const Cart = props => {
             completed: false,
             archived: false,
             time: serverTimestamp(),
-            total: cartCtx.totalAmount
+            total: cartCtx.totalAmount,
+            number: number,
         })
         cartCtx.clearCart()
         setLoading(false)
@@ -65,7 +68,8 @@ const Cart = props => {
         return (<Modal key="successModal" onClose={onSuccessClose}>
             <div className={classes['success-modal']}>
                 <img src={done} className={classes['filter-green']} style={{ width: 100 }} alt="success" />
-                <h1>Abbiamo ricevuto il tuo ordine!</h1>
+                <h2>Abbiamo ricevuto il tuo ordine!</h2>
+                <h1>{orderNumber}</h1>
             </div>
             <div className={classes.actions}>
                 <button className={classes['button--alt']} onClick={onSuccessClose}>Ok</button>
@@ -89,3 +93,14 @@ const Cart = props => {
 }
 
 export default Cart;
+
+function makeid(length) {
+    var result = '';
+    var characters = '0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() *
+            charactersLength));
+    }
+    return result;
+}

@@ -3,13 +3,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB44jo9V-3c3I_s7lP_D5Hn5h2-uWkLvAY",
-    authDomain: "smart-menu-demo.firebaseapp.com",
-    projectId: "smart-menu-demo",
-    storageBucket: "smart-menu-demo.appspot.com",
-    messagingSenderId: "413659766987",
-    appId: "1:413659766987:web:0b2ca12ecaf509c5283b4e",
-    measurementId: "G-4S92XQ05KN"
+    apiKey: "AIzaSyAQYC3QxMNaxUyK18TY1-8VbuR78j_o_U4",
+    authDomain: "ahora-milano.firebaseapp.com",
+    projectId: "ahora-milano",
+    storageBucket: "ahora-milano.appspot.com",
+    messagingSenderId: "61731098849",
+    appId: "1:61731098849:web:c35a386ea1be900e2f27a0",
+    measurementId: "G-VZCF6NHJL2"
 };
 
 // Initialize Firebase
